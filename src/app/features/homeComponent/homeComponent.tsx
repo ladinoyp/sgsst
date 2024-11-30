@@ -1,73 +1,124 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Slider from "react-slick";
+import acriesgosImage from "@/app/assets/images/aycok.png";
+import { Header } from "@/app/shared/header/header";
 
-export const  HomeComponent=()=> {
+// Configuración del slider
+const sliderSettings = {
+  dots: true, // Mostrar puntos de navegación
+  infinite: true, // Repetir el slider
+  speed: 500, // Velocidad de transición
+  slidesToShow: 1, // Mostrar una imagen por vez
+  slidesToScroll: 1, // Desplazar una imagen por vez
+  autoplay: true, // Desplazamiento automático
+  autoplaySpeed: 3000, // Velocidad del autoplay
+};
+
+export const HomeComponent = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-color-gray-light p-6">
-      <header className="bg-color-orange text-color-white p-4 rounded-md">
-        <h1 className="text-2xl font-bold text-center">Dashboard Principal</h1>
-      </header>
+    <div className="min-h-screen bg-color-white">
 
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {/* Componente: Resumen del Plan Anual */}
-        <section className="bg-color-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg text-color-gray-dark mb-2">
-            Resumen del Plan Anual
-          </h2>
-          <p className="text-color-gray-dark">
-            Revisa el progreso y las tareas pendientes.
-          </p>
-        </section>
+      {/* Encabezado */}
+      <Header />
 
-        {/* Componente: Gestión de Planes */}
-        <section className="bg-color-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg text-color-gray-dark mb-2">
-            Gestión de Planes
-          </h2>
-          <button
-            className="bg-color-orange text-color-white py-2 px-4 rounded-md font-bold hover:bg-orange-600"
-            onClick={() => router.push("/gestion-planes")}
-          >
-            Agregar/Modificar Plan
-          </button>
-        </section>
+      {/* Contenido principal */}
+      <main>
+        {/* Slider */}
+        <div className="mt-6 px-6">
+          <Slider {...sliderSettings}>
+            {/* Imagen 1 */}
+            <div className="flex flex-col items-center bg-color-gray-light rounded p-4">
+              <Image
+                src={acriesgosImage}
+                alt="Slide 1"
+                width={500}
+                height={300}
+                className="rounded-lg"
+              />
+              <p className="text-color-gray-dark mt-4 text-center">
+                Bienvenido al Sistema de Gestión de Seguridad y Salud en el Trabajo.
+              </p>
+            </div>
+            {/* Imagen 2 */}
+            <div className="flex flex-col items-center bg-color-gray-light rounded p-4">
+              <Image
+                src={acriesgosImage} // Cambia la imagen si tienes otra
+                alt="Slide 2"
+                width={500}
+                height={300}
+                className="rounded-lg"
+              />
+              <p className="text-color-gray-dark mt-4 text-center">
+                Administra y mejora tus planes anuales y actividades con eficiencia.
+              </p>
+            </div>
+          </Slider>
+        </div>
 
-        {/* Componente: Lista de Actividades */}
-        <section className="bg-color-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg text-color-gray-dark mb-2">
-            Lista de Actividades
-          </h2>
-          <p className="text-color-gray-dark">
-            Visualiza y registra el estado de actividades.
-          </p>
-        </section>
+        {/* Grid de componentes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-6">
+          {/* Resumen del Plan Anual */}
+          <section className="bg-color-gray-light p-6 rounded shadow">
+            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
+              Plan Anual de Trabajo
+            </h2>
+            <p className="text-color-gray-dark">
+              Revisa el progreso y las tareas pendientes.
+            </p>
+          </section>
 
-        {/* Componente: Agenda Lean */}
-        <section className="bg-color-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg text-color-gray-dark mb-2">
-            Agenda Lean
-          </h2>
-          <p className="text-color-gray-dark">
-            Gestiona acuerdos y notificaciones de reuniones.
-          </p>
-        </section>
+          {/* Gestión de Planes */}
+          <section className="bg-color-gray-light p-6 rounded shadow">
+            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
+              Gestión de tareas
+            </h2>
+            <button
+              className="mt-4 bg-color-orange text-color-white py-2 px-4 rounded hover:bg-orange-500"
+              onClick={() => router.push("/gestion-planes")}
+            >
+              Agregar/Modificar Plan
+            </button>
+          </section>
 
-        {/* Componente: Cargar Evidencias */}
-        <section className="bg-color-white p-4 rounded-md shadow-md">
-          <h2 className="font-bold text-lg text-color-gray-dark mb-2">
-            Cargar Evidencias
-          </h2>
-          <button
-            className="bg-color-orange text-color-white py-2 px-4 rounded-md font-bold hover:bg-orange-600"
-            onClick={() => router.push("/cargar-evidencias")}
-          >
-            Subir Documentos
-          </button>
-        </section>
+          {/* Agenda Lean */}
+          <section className="bg-color-gray-light p-6 rounded shadow">
+            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
+              Agenda
+            </h2>
+            <p className="text-color-gray-dark">
+              Gestiona acuerdos y notificaciones de reuniones.
+            </p>
+          </section>
+
+          {/* Lista de Actividades */}
+          <section className="bg-color-gray-light p-6 rounded shadow">
+            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
+              Lista de Actividades
+            </h2>
+            <p className="text-color-gray-dark">
+              Visualiza y registra el estado de actividades.
+            </p>
+          </section>
+
+          {/* Cargar Evidencias */}
+          <section className="bg-color-gray-light p-6 rounded shadow">
+            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
+              Cargar Evidencias
+            </h2>
+            <button
+              className="mt-4 bg-color-orange text-color-white py-2 px-4 rounded hover:bg-orange-500"
+              onClick={() => router.push("/cargar-evidencias")}
+            >
+              Subir Documentos
+            </button>
+          </section>
+        </div>
       </main>
     </div>
   );
-}
+};
