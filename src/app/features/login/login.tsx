@@ -98,7 +98,7 @@ export const Login = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-orange-600 transition"
+              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-color-yellow transition"
             >
               Iniciar Sesión
             </button>

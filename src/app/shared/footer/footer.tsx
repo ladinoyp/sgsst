@@ -13,7 +13,7 @@ import {
 
 export const Footer = () => {
   return (
-    <footer className="bg-color-black text-color-white p-10">
+    <footer className="bg-color-black text-color-white p-10 ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Columna 1: Información */}
         <div>

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 import acriesgosImage from "@/app/assets/images/aycok.png";
+import Link from "next/link";
+import { PUBLIC_ROUTES } from "@/app/constants/routes";
 
 type FormInputs = {
   name: string;
@@ -140,10 +142,18 @@ export default function RegisterPage() {
             {/* Botón de Registro */}
             <button
               type="submit"
-              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-orange-600 transition"
+              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-color-yellow transition"
             >
               Registrarse
             </button>
+
+            {/* Enlace para iniciar sesión */}
+            <p className="mt-4 text-center text-color-gray-dark text-sm">
+            ¿Ya tienes una cuenta?{" "}
+            <Link href={PUBLIC_ROUTES.LOGIN} className="text-color-orange font-bold hover:underline">
+              Inicia sesión
+            </Link>
+          </p>
           </form>
         </div>
       </div>
