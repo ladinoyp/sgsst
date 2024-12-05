@@ -104,8 +104,23 @@ export const Login = () => {
             </button>
           </form>
 
-          {/* Link para registrarse */}
+          {/* Línea divisora */}
+          <hr className="my-8 border-t border-color-yellow w-full" />
+
+          {/* Link para recordar contraseña */}
           <div className="mt-8 text-center">
+            <p className="text-color-gray-dark">              
+              <button
+                onClick={() => router.push(PUBLIC_ROUTES.REGISTER)}
+                className="text-color-orange font-bold hover:underline"
+              >
+                ¿Has olvidado la contraseña?
+              </button>
+            </p>
+          </div>
+          
+          {/* Link para registrarse */}
+          <div className="mt-2 text-center">
             <p className="text-color-gray-dark">
               ¿No tienes una cuenta?{" "}
               <button

@@ -44,7 +44,7 @@ export const Welcome = () => {
                 className="rounded-lg"
               />
               <p className="text-color-gray-dark mt-4 text-center">
-                Bienvenido al Sistema de Gestión de Seguridad y Salud en el Trabajo.
+                Sistema de Gestión de Seguridad y Salud en el Trabajo de A&C RIESGOS.
               </p>
             </div>
             {/* Imagen 2 */}

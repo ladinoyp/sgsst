@@ -8,6 +8,8 @@ import { PRIVATE_ROUTES } from "@/app/constants/routes";
 import acriesgosImage from "@/app/assets/images/aycok.png";
 import documentIcon from "@/app/assets/images/document.png";
 import calendarIcon from "@/app/assets/images/calendar.png";
+import userIcon from "@/app/assets/images/user.png";
+import activityIcon from "@/app/assets/images/notes.png";
 
 // Configuración del slider
 const sliderSettings = {
@@ -17,7 +19,7 @@ const sliderSettings = {
   slidesToShow: 1, // Mostrar una imagen por vez
   slidesToScroll: 1, // Desplazar una imagen por vez
   autoplay: true, // Desplazamiento automático
-  autoplaySpeed: 3000, // Velocidad del autoplay
+  autoplaySpeed: 5000, // Velocidad del autoplay
 };
 
 export const HomeComponent = () => {
@@ -44,7 +46,7 @@ export const HomeComponent = () => {
                 className="rounded-lg"
               />
               <p className="text-color-gray-dark mt-4 text-center">
-                Bienvenido al Sistema de Gestión de Seguridad y Salud en el Trabajo.
+                Sistema de Gestión de Seguridad y Salud en el Trabajo de A&C RIESGOS.
               </p>
             </div>
             {/* Imagen 2 */}
@@ -65,10 +67,15 @@ export const HomeComponent = () => {
 
    
         {/* Texto descriptivo del sistema */}
-        <p className="text-color-gray-dark mt-2 text-justify text-sm w-[70%] mx-auto mt-9 break-words">
-          Este sistema ayuda a optimizar tareas y garantizar el cumplimiento legal hjedvucgeswudjgehfgeysdfyagfhsjadgfhdsgfhdsjgfhdsjgfdshjgfdjhsgfhdgfhdgydruvgdhxjbvgfdhjgdhjghdjghfvfgvjfkjfdjkfjkdfkjfdkjfdjkfdjkdfjkfdjjkfdjkfdjkfdjkdfjkfdjkfdjkdfjkuhnifsdujhfguisdhv sdkjngnhfdruki nbjfnvkjki hu gbvhbguy gty bjhvb uyhgb bhbvyuguygbuiyghuybiyguybvdab swecvbh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div className="w-[70%] mx-auto mt-9">
+          <h2 className="text-color-orange text-lg font-bold text-center mb-2">
+            ADMINISTRACIÓN Y CONTROL SISTEMA DE GESTION SEGURIDAD Y SALUD EN EL TRABAJO
+          </h2>
+          <p className="text-color-black text-justify text-sm break-words">
+            Administramos y coordinamos las estrategias que permitan llevar a cabo la gestión y el desarrollo del Sistema de Gestión de Seguridad y Salud en el Trabajo al interior de tu compañía.
+          </p>
+        </div>
 
-        </p>
 
         {/* Grid de componentes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-6">
@@ -79,7 +86,7 @@ export const HomeComponent = () => {
             onClick={() => router.push(PRIVATE_ROUTES.PLAN_MANAGEMENT)}
           >
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
-              Plan anual de trabajo
+              PLAN ANUAL DE TRABAJO
             </h2>
             <div className="flex justify-center mb-4">
               <Image
@@ -110,10 +117,9 @@ export const HomeComponent = () => {
           </section> */}
 
           {/* Agenda Lean */}
-          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">
-            
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
-              Agenda
+              AGENDA
             </h2>
             <div className="flex justify-center mb-4">
               <Image
@@ -131,23 +137,43 @@ export const HomeComponent = () => {
           </section>
 
 
-          {/* Lista de Actividades */}
-          <section className="bg-color-gray-light p-6 rounded shadow">
-            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
-              Gestionar actividades
+          {/* Lista de Actividades */} 
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              GESTIONAR ACTIVIDADES
             </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={activityIcon}
+                alt="User"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Visualiza, registra o modifica actividades.
             </p>
-          </section>
+          </section>        
           
           {/* Lista de clientes */}
-          <section className="bg-color-gray-light p-6 rounded shadow">
-            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
-              Gestionar usuarios
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              GESTIONAR USUARIOS
             </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={userIcon}
+                alt="User"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
-            Visualiza, registra o modifica usuarios.
+              Visualiza, registra o modifica usuarios.
             </p>
           </section>
 

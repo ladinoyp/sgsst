@@ -18,7 +18,7 @@ export const PlanManagement = () => {
   const verActividades = (id: number) => {
     console.log(`Ver actividades para la empresa con ID: ${id}`);
     // Aquí puedes redirigir o realizar una acción para mostrar actividades
-    router.push(`${PRIVATE_ROUTES.PM_ACTIVITY}/${id}`);
+     router.push(`${PRIVATE_ROUTES.PM_ACTIVITY}/${id}`); 
   };
 
   return (
@@ -34,7 +34,7 @@ export const PlanManagement = () => {
         </h1>
 
         {/* Contenedor de la tabla */}
-        <div className="overflow-x-auto w-full max-w-[70%]">
+        <div className="overflow-x-auto w-full max-w-[80%]">
           <table className="min-w-full bg-color-white rounded-lg shadow-md border border-color-gray-light">
             {/* Cabecera de la tabla */}
             <thead className="bg-color-yellow text-color-black">
@@ -71,7 +71,7 @@ export const PlanManagement = () => {
         {/* Botón de "Volver" */}
         <button
           onClick={() => router.back()} // Utiliza router.back para volver a la página anterior
-          className="mt-8 bg-color-orange text-color-white py-2 px-6 rounded font-bold hover:bg-color-yellow transition"
+          className="mt-9 bg-color-orange text-color-white py-2 px-6 rounded font-bold hover:bg-color-yellow transition"
         >
           Volver
         </button>
