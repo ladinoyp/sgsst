@@ -111,7 +111,7 @@ export const Login = () => {
           <div className="mt-8 text-center">
             <p className="text-color-gray-dark">              
               <button
-                onClick={() => router.push(PUBLIC_ROUTES.REGISTER)}
+                onClick={() => router.push(PUBLIC_ROUTES.RESET_PASSWORD)}
                 className="text-color-orange font-bold hover:underline"
               >
                 ¿Has olvidado la contraseña?

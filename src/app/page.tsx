@@ -1,3 +1,4 @@
+import { Agenda } from "./features/agenda/agenda";
 import { Login } from "./features/login/login";
 import RegisterPage from "./features/register/register";
 import { Welcome } from "./features/welcome/welcome";

@@ -117,7 +117,9 @@ export const HomeComponent = () => {
           </section> */}
 
           {/* Agenda Lean */}
-          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.AGENDA)}
+          >            
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
               AGENDA
             </h2>

@@ -46,7 +46,7 @@ export default function RegisterPage() {
             {/* Nombre */}
             <div>
               <label htmlFor="name" className="block text-color-gray-dark font-medium mb-2">
-                Nombre Completo
+                Nombre completo
               </label>
               <input
                 id="name"
@@ -63,7 +63,7 @@ export default function RegisterPage() {
             {/* Correo */}
             <div>
               <label htmlFor="email" className="block text-color-gray-dark font-medium mb-2">
-                Correo Electrónico
+                Correo electrónico
               </label>
               <input
                 id="email"
@@ -86,7 +86,7 @@ export default function RegisterPage() {
             {/* Documento */}
             <div>
               <label htmlFor="document" className="block text-color-gray-dark font-medium mb-2">
-                Documento de Identidad
+                Documento de identidad
               </label>
               <input
                 id="document"
@@ -103,7 +103,7 @@ export default function RegisterPage() {
             {/* Número de Celular */}
             <div>
               <label htmlFor="phone" className="block text-color-gray-dark font-medium mb-2">
-                Número de Celular
+                Número de celular
               </label>
               <input
                 id="phone"
@@ -126,7 +126,7 @@ export default function RegisterPage() {
             {/* Fecha de Nacimiento */}
             <div>
               <label htmlFor="birthDate" className="block text-color-gray-dark font-medium mb-2">
-                Fecha de Nacimiento
+                Fecha de nacimiento
               </label>
               <input
                 id="birthDate"

@@ -46,6 +46,40 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@fullcalendar/core@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.0.0.tgz#d969fec1097afc3c6cc1dea3fb3ea733c9a4030a"
+  integrity sha512-0lseac4/yJQhT9QjPGlqwEsZsoD0kKjuUI9KNUWMXqBPcK7Gk1pXJyP2Np7k9aqU5yLF7+pKp7fYR4YPiy++ew==
+  dependencies:
+    preact "^10.0.5"
+
+"@fullcalendar/daygrid@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.0.0.tgz#3ac16d70925955c9f81a53ac0b76b1b5c3213f7d"
+  integrity sha512-Lzv1saFduDR9amaC1zeHFb+iBBqGF7Gu+j5O6zTSZarCCWlrc9lgTN7sB6VAQE2XIFfz8s9EzK3UYd/goaKMpA==
+
+"@fullcalendar/daygrid@~6.0.0":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.0.3.tgz#e4abf955b6308e6823b65722558c0669aebe5388"
+  integrity sha512-JWWwWRsi1dgTlbXSbqjmBjd9SRN6wuXOvOwcuvW5sZtk77vtuD5DKcqoitOREq4e2P/f2WdMV6812AVSAPRODw==
+
+"@fullcalendar/interaction@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.0.0.tgz#913ebaff673547fed87e763e3e5575451f895f47"
+  integrity sha512-fVv1b/HTh8AnPvKD/bFhlcEexVqOnhRNPlJFZtsiM4Ts4kNBIm9m53FHwGTkcV4Xi8lx3I1V1jOQE6OEm0KcQw==
+
+"@fullcalendar/react@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.0.0.tgz#0c294309d29c185af9c3d62f11d038a66a6474b2"
+  integrity sha512-uxICTGtFclJigItsB4kH8xUHeV8KRKpAJpV2YFDBocN4KH/Xn+y/NnO5nl9YjRTYRSbi8YOAZtdVfvoU3nYPDA==
+
+"@fullcalendar/timegrid@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.0.0.tgz#246ab17c1dedc6fb4e23897302b1749174baa2d1"
+  integrity sha512-R/IalqJjCG2/l2s2mIBJeq7YYcoShsM6Ee+vVu1wRRfBWDG2mLt1WiWmF74g7RhqPXAHymD6uptA0FlzIDnIxQ==
+  dependencies:
+    "@fullcalendar/daygrid" "~6.0.0"
+
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.13.0.tgz#fb907624df3256d04b9aa2df50d7aa97ec648748"
@@ -2214,6 +2248,11 @@ postcss@^8, postcss@^8.4.47:
     nanoid "^3.3.7"
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
+
+preact@^10.0.5:
+  version "10.25.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.25.1.tgz#1c4b84253c42dee874bfbf6a92bdce45e3662665"
+  integrity sha512-frxeZV2vhQSohQwJ7FvlqC40ze89+8friponWUFeVEkaCfhC6Eu4V0iND5C9CXz8JLndV07QRDeXzH1+Anz5Og==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
