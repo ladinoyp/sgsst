@@ -160,7 +160,9 @@ export const HomeComponent = () => {
           </section>        
           
           {/* Lista de clientes */}
-          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.MNG_USER)}
+          >            
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
               GESTIONAR USUARIOS
             </h2>

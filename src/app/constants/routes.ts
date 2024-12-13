@@ -9,4 +9,5 @@ export const PRIVATE_ROUTES={
     PLAN_MANAGEMENT : '/pages/planManagement',
     PM_ACTIVITY : '/pages/planManagement/activity',
     AGENDA : '/pages/agenda',
+    MNG_USER : '/pages/managementUser',
 }

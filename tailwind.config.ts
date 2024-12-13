@@ -17,6 +17,7 @@ const config: Config = {
         "color-white": "#FFFFFF", // Blanco
 
         "color-blue-light": "#BFDBFE", // Azul claro
+        "color-red": "#FF0000", // rojo
 
         "cl-status-blue": "#1E90FF", // Programado
         "cl-status-yellow": "#FFFF00", // En proceso
