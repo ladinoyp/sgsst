@@ -51,7 +51,7 @@ export const ManagementUser = () => {
       tipoDocumento: "",
       numeroDocumento: "",
       correo: "",
-      rol: "Funcionario",
+      rol: "",
       celular: "",
     });
   };
@@ -77,7 +77,7 @@ export const ManagementUser = () => {
       {/* Contenido principal */}
       <main className="p-6 flex flex-col items-center">
         <h1 className="text-color-black text-2xl font-bold mb-6 text-center">
-          GESTIÓN DE USUARIOS
+          GESTIÓN DE USUARIOS PLATAFORMA
         </h1>
 
         {/* Contenedor para filtro y tabla */}
@@ -168,8 +168,12 @@ export const ManagementUser = () => {
                     name="nombre"
                     value={nuevoUsuario.nombre}
                     onChange={handleInputChange}
+                    onInput={(e:any) => {
+                      e.target.value = e.target.value.replace(/[0-9]/g, ""); // Elimina números del input
+                    }}
                     placeholder="Nombre completo"
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded "
+                    style={{color:"black"}}                    
                   />
                 </div>
                 {/* Tipo de Documento */}
@@ -184,7 +188,7 @@ export const ManagementUser = () => {
                     onChange={handleInputChange}
                     className="w-full p-2 border border-gray-300 rounded text-color-black"
                   >
-                    <option value="">Selecciona...</option>
+                    <option value="">Seleccionar...</option>
                     <option value="CC">Cédula de Ciudadanía (CC)</option>
                     <option value="CE">Cédula de Extranjería (CE)</option>
                     <option value="TI">Tarjeta de Identidad (TI)</option>
@@ -206,6 +210,7 @@ export const ManagementUser = () => {
                     onChange={handleInputChange}
                     placeholder="Número de documento"
                     className="w-full p-2 border border-gray-300 rounded"
+                    style={{color:"black"}}                    
                   />
                 </div>
                 {/* Correo */}
@@ -219,8 +224,15 @@ export const ManagementUser = () => {
                     name="correo"
                     value={nuevoUsuario.correo}
                     onChange={handleInputChange}
+                    onBlur={(e) => {
+                    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
+                      if (!correoValido && e.target.value !== "") {
+                        alert("Por favor, ingresa un correo válido.");
+                      }
+                    }}
                     placeholder="Correo"
                     className="w-full p-2 border border-gray-300 rounded"
+                    style={{color:"black"}}                    
                   />
                 </div>
                 {/* Rol */}
@@ -231,10 +243,10 @@ export const ManagementUser = () => {
                   <select
                     id="rol"
                     name="rol"
-                    value={nuevoUsuario.rol}
                     onChange={handleInputChange}
                     className="w-full p-2 border border-gray-300 rounded text-color-black"
                   >
+                    <option value="">Seleccionar...</option>
                     <option value="Funcionario">Funcionario</option>
                     <option value="Profesional">Profesional</option>
                   </select>
@@ -250,8 +262,12 @@ export const ManagementUser = () => {
                     name="celular"
                     value={nuevoUsuario.celular}
                     onChange={handleInputChange}
+                    onInput={(e:any) => {
+                      e.target.value = e.target.value.replace(/\D/g, ""); // Elimina caracteres no numéricos
+                    }}
                     placeholder="Celular"
                     className="w-full p-2 border border-gray-300 rounded"
+                    style={{color:"black"}}                    
                   />
                 </div>
               </div>

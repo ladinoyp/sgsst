@@ -10,43 +10,78 @@ export const Header = () => {
 
   return (
     <header className="bg-color-gray-dark text-color-white py-2 shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Logo y Título */}
-        <div className="flex items-center space-x-4">
-          {/* Imagen del logo */}
-          <Image
-            src={acriesgosImage}
-            alt="Logo"
-            width={80}
-            height={40}
-            className="rounded"
-          />
-          <span className="font-bold text-sm">
-            GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO
-          </span>
-        </div>
+      <div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "0 24px",
+    maxWidth: "1200px",
+    margin: "0 auto",
+    flexWrap: "wrap", // Permite que los elementos se ajusten
+  }}
+>
+  {/* Logo y Título */}
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "16px",
+      flex: "1",
+      minWidth: "250px", // Asegura que el logo y título se mantengan juntos
+      marginBottom: "16px", // Espaciado en diseño en columna
+    }}
+  >
+    <Image
+      src={acriesgosImage}
+      alt="Logo"
+      width={80}
+      height={40}
+      style={{ borderRadius: "8px" }}
+    />
+    <span style={{ fontWeight: "bold", fontSize: "14px", color: "white" }}>
+      GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO
+    </span>
+  </div>
 
-        {/* Usuario y Menú de Navegación */}
-        <div className="flex flex-col items-end">
-          {/* Nombre del usuario alineado a la derecha */}
-          <p className="text-xs text-color-white mb-1">
-            {userName}
-          </p>
+  {/* Usuario y Menú de Navegación */}
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-end",
+      gap: "8px",
+      flex: "1",
+      minWidth: "250px",
+    }}
+  >
+    {/* Nombre del usuario alineado a la derecha */}
+    <p style={{ fontSize: "12px", color: "#FFFFFF", marginBottom: "4px" }}>
+      {userName}
+    </p>
 
-          {/* Menú de Navegación */}
-          <nav className="flex space-x-6">
-            <a href="#inicio" className="hover:text-color-orange">
-              INICIO
-            </a>
-            <a href="#servicios" className="hover:text-color-orange">
-              SERVICIOS
-            </a>
-            <a href="#blog" className="hover:text-color-orange">
-              BLOG A&C
-            </a>
-          </nav>
-        </div>
-      </div>
+    {/* Menú de Navegación */}
+    <nav
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        gap: "16px",
+        flexWrap: "wrap", // Permite que se ajuste en pantalla pequeña
+      }}
+    >
+      <a href="#inicio" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
+        INICIO
+      </a>
+      <a href="#servicios" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
+        SERVICIOS
+      </a>
+      <a href="#blog" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
+        BLOG A&C
+      </a>
+    </nav>
+  </div>
+</div>
+
     </header>
   );
 };

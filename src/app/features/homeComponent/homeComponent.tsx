@@ -121,7 +121,7 @@ export const HomeComponent = () => {
             onClick={() => router.push(PRIVATE_ROUTES.AGENDA)}
           >            
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
-              AGENDA
+              AGENDA LEAN
             </h2>
             <div className="flex justify-center mb-4">
               <Image
@@ -140,9 +140,11 @@ export const HomeComponent = () => {
 
 
           {/* Lista de Actividades */} 
-          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center">            
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.MNG_LIST)}
+          >            
             <h2 className="text-lg font-bold text-color-gray-dark mb-4">
-              GESTIONAR ACTIVIDADES
+              GESTIONAR LISTAS
             </h2>
             <div className="flex justify-center mb-4">
               <Image
@@ -155,7 +157,7 @@ export const HomeComponent = () => {
             </div>
             {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
-              Visualiza, registra o modifica actividades.
+              Visualiza, registra o modifica listas.
             </p>
           </section>        
           
@@ -181,19 +183,50 @@ export const HomeComponent = () => {
             </p>
           </section>
 
-          
-          {/* Cargar Evidencias */}
-          {/* <section className="bg-color-gray-light p-6 rounded shadow">
-            <h2 className="text-lg font-bold text-color-gray-dark mb-2">
-              Cargar Evidencias
+          {/* Agenda Lean */}
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.AGENDA_PROFESIONAL)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              TO DO LIST
             </h2>
-            <button
-              className="mt-4 bg-color-orange text-color-white py-2 px-4 rounded hover:bg-orange-500"
-              onClick={() => router.push("/cargar-evidencias")}
-            >
-              Subir Documentos
-            </button>
-          </section> */}
+            <div className="flex justify-center mb-4">
+              <Image
+                src={calendarIcon}
+                alt="Calendario"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            {/* Texto descriptivo */}
+            <p className="text-color-gray-dark">
+              Gestiona agenda y actividades.
+            </p>
+          </section>
+          
+          
+          {/* Agenda Lean */}
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            //onClick={() => router.push(PRIVATE_ROUTES.AGENDA)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              GESTIONAR DOCUMENTOS
+            </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={calendarIcon}
+                alt="Calendario"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            {/* Texto descriptivo */}
+            <p className="text-color-gray-dark">
+              Gestiona documentos de actividades.
+            </p>
+          </section>
         </div>
       </main>
     </div>

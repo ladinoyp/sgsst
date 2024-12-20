@@ -10,4 +10,6 @@ export const PRIVATE_ROUTES={
     PM_ACTIVITY : '/pages/planManagement/activity',
     AGENDA : '/pages/agenda',
     MNG_USER : '/pages/managementUser',
+    MNG_LIST : '/pages/managementList',
+    AGENDA_PROFESIONAL : '/pages/agendaProfesional',
 }
