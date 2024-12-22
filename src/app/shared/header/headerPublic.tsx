@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import acriesgosImage from "@/app/assets/images/aycok.png";
+import logo from "@/app/assets/images/lgMpSF.png";
 
 export const HeaderPublic = () => {
   return (
@@ -11,27 +11,24 @@ export const HeaderPublic = () => {
         <div className="flex items-center space-x-4">
           {/* Imagen del logo */}
           <Image
-            src={acriesgosImage}
+            src={logo}
             alt="Logo"
             width={80}
             height={40}
             className="rounded"
           />
           <span className="font-bold text-sm">
-            GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO
+            ROLL OUT MB
           </span>
         </div>
 
         {/* Menú de Navegación */}
         <nav className="flex space-x-6">
-          <a href="#inicio" className="hover:text-color-orange">
+          <a href="#inicio" className="hover:text-color-blue">
             INICIO
           </a>
-          <a href="#servicios" className="hover:text-color-orange">
-            SERVICIOS
-          </a>
-          <a href="#blog" className="hover:text-color-orange">
-            BLOG A&C
+          <a href="#contacto" className="hover:text-color-blue">
+            CONTACTO
           </a>
         </nav>
       </div>
