@@ -87,7 +87,7 @@ export const MainPlan = () => {
 
             {/* SEGUIMIENTO */}
             <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
-              //onClick={() => router.push(PRIVATE_ROUTES.AGENDA)}
+              onClick={() => router.push(PRIVATE_ROUTES.PM_GENERAL_PLAN)}
             >            
               <h2 className="text-lg font-bold text-color-gray-dark mb-4">
                 SEGUIMIENTO GENERAL PLAN TRABAJO

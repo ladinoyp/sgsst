@@ -1,11 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Header } from "@/app/shared/header/header";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaFileAlt } from "react-icons/fa";
+<FaFileAlt className="text-color-black" size={20} />
+
 
 export const Activity = () => {
   const router = useRouter();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [actividadSeleccionada, setActividadSeleccionada] = useState(null);
 
   // Datos de ejemplo para las actividades
   const actividades = [
@@ -15,6 +21,7 @@ export const Activity = () => {
       fechaProceso: "2024-12-01",
       estado: "Programado",
       asesor: "María Gómez",
+      modalidad: "Presencial",
       porcentajeAvance: "10%",
     },
     {
@@ -23,6 +30,7 @@ export const Activity = () => {
       fechaProceso: "2024-11-28",
       estado: "En proceso",
       asesor: "María Gómez",
+      modalidad: "Virtual",
       porcentajeAvance: "50%",
     },
     {
@@ -31,6 +39,7 @@ export const Activity = () => {
       fechaProceso: "2024-11-30",
       estado: "A tiempo",
       asesor: "María Gómez",
+      modalidad: "Presencial",
       porcentajeAvance: "100%",
     },
     {
@@ -39,6 +48,7 @@ export const Activity = () => {
       fechaProceso: "2024-11-25",
       estado: "Fuera de tiempo",
       asesor: "María Gómez",
+      modalidad: "Virtual",
       porcentajeAvance: "75%",
     },
     {
@@ -47,9 +57,20 @@ export const Activity = () => {
       fechaProceso: "2024-11-22",
       estado: "Retrasada",
       asesor: "María Gómez",
+      modalidad: "Presencial",
       porcentajeAvance: "20%",
     },
   ];
+
+  const abrirModal = (actividad) => {
+    setActividadSeleccionada(actividad);
+    setIsModalOpen(true);
+  };
+
+  const cerrarModal = () => {
+    setIsModalOpen(false);
+    setActividadSeleccionada(null);
+  };
 
   return (
     <div className="min-h-screen bg-color-white">
@@ -63,39 +84,6 @@ export const Activity = () => {
           ACTIVIDADES DEL PLAN ANUAL DE TRABAJO
         </h1>
 
-        {/* Información básica de la empresa */}
-        <div className="w-full max-w-[70%] bg-color-gray-light rounded-lg shadow-md p-4 mb-6">
-          <h2 className="text-color-gray-dark text-lg font-bold mb-4">
-            INFORMACIÓN DE LA EMPRESA
-          </h2>
-          <table className="min-w-full">
-            <tbody>
-              <tr>
-                <td className="py-2 px-4 text-color-gray-dark font-medium">
-                  Empresa:
-                </td>
-                <td className="py-2 px-4 text-color-black">
-                  Empresa XYZ S.A.
-                </td>
-              </tr>
-              <tr>
-                <td className="py-2 px-4 text-color-gray-dark font-medium">
-                  NIT:
-                </td>
-                <td className="py-2 px-4 text-color-black">900123456-7</td>
-              </tr>
-              <tr>
-                <td className="py-2 px-4 text-color-gray-dark font-medium">
-                  Ubicación:
-                </td>
-                <td className="py-2 px-4 text-color-black">
-                  Carrera 10 #23-45, Bogotá, Colombia
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
         {/* Contenedor de la tabla */}
         <div className="overflow-x-auto w-full max-w-[70%]">
           <table className="min-w-full bg-color-white rounded-lg shadow-md border border-color-gray-light">
@@ -107,6 +95,7 @@ export const Activity = () => {
                 <th className="py-3 px-6 text-center">Estado</th>
                 <th className="py-3 px-6 text-center">Porcentaje Avance</th>
                 <th className="py-3 px-6 text-right">Asesor</th>
+                <th className="py-3 px-6 text-right">Modalidad</th>
                 <th className="py-3 px-6 text-center rounded-tr-lg">Editar</th>
               </tr>
             </thead>
@@ -147,9 +136,12 @@ export const Activity = () => {
                   <td className="py-3 px-6 text-right text-color-black">
                     {actividad.asesor}
                   </td>
+                  <td className="py-3 px-6 text-right text-color-black">
+                    {actividad.modalidad}
+                  </td>
                   <td className="py-3 px-6 text-center">
                     <button
-                      onClick={() => console.log(`Editar actividad: ${actividad.id}`)} // Acción de editar
+                      onClick={() => abrirModal(actividad)} // Acción de abrir el modal
                       className="text-color-gray-dark hover:text-color-yellow transition"
                     >
                       <FaEdit size={20} />
@@ -169,6 +161,60 @@ export const Activity = () => {
           Volver
         </button>
       </main>
+
+      {/* Modal */}
+{isModalOpen && actividadSeleccionada && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-color-white rounded-lg shadow-lg p-6 w-[90%] max-w-[500px]">
+      <h2 className="text-color-black text-xl font-bold mb-4 text-center">
+        Detalle de la Actividad
+      </h2>
+      <div className="space-y-4 text-color-black"> {/* Clase para texto negro */}
+        <p>
+          <strong>Actividad:</strong> {actividadSeleccionada.actividad}
+        </p>
+        <p>
+          <strong>Fecha de Proceso:</strong> {actividadSeleccionada.fechaProceso}
+        </p>
+        <p>
+          <strong>Estado:</strong> {actividadSeleccionada.estado}
+        </p>
+        <p>
+          <strong>Asesor profesional:</strong> {actividadSeleccionada.asesor}
+        </p>
+        <p>
+          <strong>Modalidad:</strong> {actividadSeleccionada.modalidad}
+        </p>
+        <p>
+          <strong>Porcentaje de Avance:</strong> {actividadSeleccionada.porcentajeAvance}
+        </p>
+        <p>
+          <strong>Observacion:</strong> {actividadSeleccionada.observacion}
+        </p>
+        <p className="flex items-center gap-2">
+          <strong>Evidencia:</strong>
+          <a
+            href="/ruta/del/documento.pdf"
+            download
+            className="text-color-blue hover:underline flex items-center"
+          >
+            <FaFileAlt className="text-color-black" size={20} /> Descargar documento
+          </a>
+        </p>
+      </div>
+      <div className="mt-6 flex justify-center">
+        <button
+          onClick={cerrarModal}
+          className="bg-color-orange text-color-white py-2 px-6 rounded font-bold hover:bg-color-yellow transition"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
     </div>
   );
 };
