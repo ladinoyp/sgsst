@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "color-gray-dark": "#4B5563", // Fondo gris oscuro
         "color-gray-light": "#F9FAFB", // Fondo gris claro
-        "color-gray-dark": "#4B5563", // Gris oscuro
 
         "color-black": "#000000", // Negro
         "color-blue": "#1E90FF", //Azul oscuro
@@ -20,7 +20,6 @@ const config: Config = {
         "color-red": "#FF0000", // rojo
         "color-orange": "#FB923C", // Naranja intenso
         "color-white": "#FFFFFF", // Blanco
-
 
         "cl-status-blue": "#1E90FF", // Programado
         "cl-status-yellow": "#FFFF00", // En proceso

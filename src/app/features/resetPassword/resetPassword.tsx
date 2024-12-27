@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import logo from "@/app/assets/images/lgMpSF.png";
+import logo from "@/app/assets/images/aycok.png";
 import { PUBLIC_ROUTES } from "@/app/constants/routes";
 
 // Tipos para el formulario de restauración
@@ -32,7 +32,7 @@ export const ResetPassword = () => {
     <div className="flex justify-center items-center min-h-screen bg-color-white p-6">
       <div className="flex flex-col items-center rounded-lg shadow-md max-w-md w-full">
         {/* Contenedor de encabezado con fondo gris oscuro */}
-        <div className="w-full bg-color-blue-light py-4 flex flex-col items-center rounded-t-lg">
+        <div className="w-full bg-color-gray-dark py-4 flex flex-col items-center rounded-t-lg">
           <Image
             src={logo}
             alt="Logo"
@@ -75,10 +75,10 @@ export const ResetPassword = () => {
                     message: "Formato de correo no válido",
                   },
                 })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
               />
               {errors.email && (
-                <p className="text-color-blue text-sm mt-2">
+                <p className="text-color-orange text-sm mt-2">
                   {errors.email.message}
                 </p>
               )}
@@ -87,14 +87,14 @@ export const ResetPassword = () => {
             {/* Botón de Restaurar */}
             <button
               type="submit"
-              className="w-full py-3 bg-color-blue text-color-white rounded-md font-bold hover:bg-color-blue-light transition"
+              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-color-yellow transition"
             >
               Enviar Enlace
             </button>
           </form>
 
           {/* Línea divisora */}
-          <hr className="my-8 border-t border-color-blue-light w-full" />
+          <hr className="my-8 border-t border-color-yellow w-full" />
 
           {/* Link para volver a inicio de sesión */}
           <div className="text-center">
@@ -102,7 +102,7 @@ export const ResetPassword = () => {
               ¿Ya recuerdas tu contraseña?{" "}
               <button
                 onClick={() => router.push(PUBLIC_ROUTES.LOGIN)}
-                className="text-color-blue font-bold hover:underline"
+                className="text-color-orange font-bold hover:underline"
               >
                 Inicia Sesión
               </button>

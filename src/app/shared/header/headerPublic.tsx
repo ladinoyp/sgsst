@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/app/assets/images/lgMpSF.png";
+import logo from "@/app/assets/images/aycok.png";
 
 export const HeaderPublic = () => {
   return (
@@ -18,16 +18,22 @@ export const HeaderPublic = () => {
             className="rounded"
           />
           <span className="font-bold text-sm">
-            ROLL OUT MB
+             GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO
           </span>
         </div>
 
         {/* Menú de Navegación */}
         <nav className="flex space-x-6">
-          <a href="#inicio" className="hover:text-color-blue">
+          <a href="#inicio" className="hover:text-color-orange">
             INICIO
           </a>
-          <a href="#contacto" className="hover:text-color-blue">
+          <a href="#servicios" className="hover:text-color-orange">
+            SERVICIOS
+          </a>
+          <a href="#blog" className="hover:text-color-orange">
+            BLOG A&C
+          </a>
+          <a href="#contacto" className="hover:text-color-orange">
             CONTACTO
           </a>
         </nav>

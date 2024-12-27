@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/app/assets/images/lgMpSF.png";
+import logo from "@/app/assets/images/aycok.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -17,17 +17,17 @@ export const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Columna 1: Información */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-color-blue">ROLL OUT MB</h3>
+          <h3 className="text-lg font-bold mb-4 text-color-yellow">SG-SST</h3>
           <ul className="space-y-2">
             <li className="flex items-center">
-              Roll Out MB
+              Gestión de Seguridad y Salud en el Trabajo
             </li>
           </ul>
         </div>
 
         {/* Columna 2: Detalles */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-color-blue">
+          <h3 className="text-lg font-bold mb-4 text-color-yellow">
             INFORMACIÓN:
           </h3>
           <ul className="space-y-2">
@@ -41,7 +41,7 @@ export const Footer = () => {
             </li>
             <li className="flex items-center">
               <span className="mr-2 text-color-yellow">📧</span>
-              gestioncomercial@ejemplo.com
+              gestioncomercial@aycriesgos.com
             </li>
             <li className="flex items-center">
               <span className="mr-2 text-color-yellow">📱</span>
@@ -60,12 +60,12 @@ export const Footer = () => {
             <Image
               src={logo}
               alt="A&C Riesgos"
-              width={95}
-              height={45}
+              width={75}
+              height={25}
             />
           </div>
 
-          <p className="mb-4">Síguenos</p>
+          <p className="mb-4">Síguenos como A&C Riesgos:</p>
           <div className="flex justify-center md:justify-end space-x-4">
             <FaFacebookF className="text-2xl hover:text-color-yellow cursor-pointer" />
             <FaInstagram className="text-2xl hover:text-color-yellow cursor-pointer" />
