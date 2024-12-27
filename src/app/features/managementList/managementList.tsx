@@ -333,7 +333,6 @@ const Clientes = () => {
     setClientes(clientes.filter((comp) => comp.id !== id));
     setOpenModalDelete(false)
   };
-
   return (
     <div className="overflow-x-auto w-4/5 mx-auto">
       {/* Encabezado */}

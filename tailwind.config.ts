@@ -13,9 +13,10 @@ const config: Config = {
         "color-gray-light": "#F9FAFB", // Fondo gris claro
 
         "color-black": "#000000", // Negro
+
         "color-blue": "#1E90FF", //Azul oscuro
         "color-blue-light": "#BFDBFE", //Azul claro
-        "color-green": "#32CD32", // Verde
+        
         "color-yellow": "#FBBF24", // Amarillo cálido
         "color-red": "#FF0000", // rojo
         "color-orange": "#FB923C", // Naranja intenso

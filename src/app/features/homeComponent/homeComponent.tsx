@@ -4,12 +4,14 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Slider from "react-slick";
 import { Header } from "@/app/shared/header/header";
-import { PRIVATE_ROUTES } from "@/app/constants/routes";
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/constants/routes";
 import acriesgosImage from "@/app/assets/images/aycok.png";
+import documentIcon from "@/app/assets/images/document.png";
 import calendarIcon from "@/app/assets/images/calendar.png";
 import activityIcon from "@/app/assets/images/notes.png";
-import documentIcon from "@/app/assets/images/document.png";
 import userIcon from "@/app/assets/images/user.png";
+import edit from "@/app/assets/images/pencil.png";
+import exit from "@/app/assets/images/exit.png";
 
 
 
@@ -120,7 +122,6 @@ export const HomeComponent = () => {
                 className="rounded"
               />
             </div>
-            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Gestiona acuerdos y notificaciones de reuniones.
             </p>
@@ -142,7 +143,6 @@ export const HomeComponent = () => {
                 className="rounded"
               />
             </div>
-            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Visualiza, registra o modifica listas.
             </p>
@@ -164,12 +164,12 @@ export const HomeComponent = () => {
                 className="rounded"
               />
             </div>
-            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Visualiza, registra o modifica usuarios de la plataforma.
             </p>
           </section>
-{/* Agenda Lean */}
+
+          {/* To do list */}
           <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
             onClick={() => router.push(PRIVATE_ROUTES.AGENDA_PROFESIONAL)}
           >            
@@ -185,13 +185,12 @@ export const HomeComponent = () => {
                 className="rounded"
               />
             </div>
-            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Gestiona agenda y actividades.
             </p>
           </section>
 
-          {/* Agenda lean */} 
+          {/* Gestionar documentos */} 
           <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
             //onClick={() => router.push(PRIVATE_ROUTES.AGENDA)}
           >            
@@ -207,11 +206,49 @@ export const HomeComponent = () => {
                 className="rounded"
               />
             </div>
-            {/* Texto descriptivo */}
             <p className="text-color-gray-dark">
               Gestiona documentos de actividades.
             </p>
           </section>    
+
+          {/* Editar perfil */} 
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.EDIT_PROFILE)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              EDITAR PERFIL
+            </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={edit}
+                alt="edit"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            <p className="text-color-gray-dark">
+              Administrar información de mi perfil.
+            </p>
+          </section>  
+
+          {/* Salir */} 
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PUBLIC_ROUTES.WELCOME)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              CERRAR SESIÓN
+            </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={exit}
+                alt="exit"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+          </section> 
 
         </div>
       </main>
