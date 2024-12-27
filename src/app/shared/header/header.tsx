@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import acriesgosImage from "@/app/assets/images/aycok.png";
+import logo from "@/app/assets/images/lgMpSF.png";
 
 export const Header = () => {
   // Estado para el nombre del usuario
@@ -33,14 +33,14 @@ export const Header = () => {
     }}
   >
     <Image
-      src={acriesgosImage}
+      src={logo}
       alt="Logo"
       width={80}
       height={40}
       style={{ borderRadius: "8px" }}
     />
     <span style={{ fontWeight: "bold", fontSize: "14px", color: "white" }}>
-      GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO
+      ROLL OUT MB
     </span>
   </div>
 
@@ -72,11 +72,8 @@ export const Header = () => {
       <a href="#inicio" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
         INICIO
       </a>
-      <a href="#servicios" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
-        SERVICIOS
-      </a>
-      <a href="#blog" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
-        BLOG A&C
+      <a href="#contacto" style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "14px" }}>
+        CONTACTO
       </a>
     </nav>
   </div>

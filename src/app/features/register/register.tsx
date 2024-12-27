@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
-import acriesgosImage from "@/app/assets/images/aycok.png";
+import logo from "@/app/assets/images/lgMpSF.png";
 import Link from "next/link";
 import { PUBLIC_ROUTES } from "@/app/constants/routes";
 
@@ -26,9 +26,9 @@ export default function RegisterPage() {
     <div className="flex justify-center items-center min-h-screen bg-color-white p-6">
       <div className="flex flex-col items-center rounded-lg shadow-md max-w-md w-full">
         {/* Contenedor de encabezado con fondo gris oscuro */}
-        <div className="w-full bg-color-gray-dark py-1 flex flex-col items-center rounded-t-lg">
+        <div className="w-full bg-color-blue-light py-1 flex flex-col items-center rounded-t-lg">
           <Image
-            src={acriesgosImage}
+            src={logo}
             alt="Logo"
             width={150}
             height={150}
@@ -53,10 +53,10 @@ export default function RegisterPage() {
                 type="text"
                 placeholder="Ingresa tu nombre completo"
                 {...register("name", { required: "El nombre es obligatorio" })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
               />
               {errors.name && (
-                <p className="text-color-orange text-sm mt-1">{errors.name.message}</p>
+                <p className="text-color-blue text-sm mt-1">{errors.name.message}</p>
               )}
             </div>
 
@@ -76,10 +76,10 @@ export default function RegisterPage() {
                     message: "Formato de correo no válido",
                   },
                 })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
               />
               {errors.email && (
-                <p className="text-color-orange text-sm mt-1">{errors.email.message}</p>
+                <p className="text-color-blue text-sm mt-1">{errors.email.message}</p>
               )}
             </div>
 
@@ -93,10 +93,10 @@ export default function RegisterPage() {
                 type="text"
                 placeholder="Ingresa tu número de documento"
                 {...register("document", { required: "El documento es obligatorio" })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
               />
               {errors.document && (
-                <p className="text-color-orange text-sm mt-1">{errors.document.message}</p>
+                <p className="text-color-blue text-sm mt-1">{errors.document.message}</p>
               )}
             </div>
 
@@ -116,10 +116,10 @@ export default function RegisterPage() {
                     message: "El número debe tener 10 dígitos",
                   },
                 })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
               />
               {errors.phone && (
-                <p className="text-color-orange text-sm mt-1">{errors.phone.message}</p>
+                <p className="text-color-blue text-sm mt-1">{errors.phone.message}</p>
               )}
             </div>
 
@@ -132,17 +132,17 @@ export default function RegisterPage() {
                 id="birthDate"
                 type="date"
                 {...register("birthDate", { required: "La fecha de nacimiento es obligatoria" })}
-                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-orange"
+                className="w-full p-3 rounded-md border border-gray-300 bg-color-white text-color-gray-dark focus:outline-none focus:ring-2 focus:ring-color-blue"
               />
               {errors.birthDate && (
-                <p className="text-color-orange text-sm mt-1">{errors.birthDate.message}</p>
+                <p className="text-color-blue text-sm mt-1">{errors.birthDate.message}</p>
               )}
             </div>
 
             {/* Botón de Registro */}
             <button
               type="submit"
-              className="w-full py-3 bg-color-orange text-color-white rounded-md font-bold hover:bg-color-yellow transition"
+              className="w-full py-3 bg-color-blue text-color-white rounded-md font-bold hover:bg-color-blue-light transition"
             >
               Registrarse
             </button>
@@ -150,7 +150,7 @@ export default function RegisterPage() {
             {/* Enlace para iniciar sesión */}
             <p className="mt-4 text-center text-color-gray-dark text-sm">
             ¿Ya tienes una cuenta?{" "}
-            <Link href={PUBLIC_ROUTES.LOGIN} className="text-color-orange font-bold hover:underline">
+            <Link href={PUBLIC_ROUTES.LOGIN} className="text-color-blue font-bold hover:underline">
               Inicia sesión
             </Link>
           </p>

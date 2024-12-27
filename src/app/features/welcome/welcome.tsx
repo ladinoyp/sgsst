@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Slider from "react-slick";
-import acriesgosImage from "@/app/assets/images/aycok.png";
+import logo from "@/app/assets/images/lgMpSF.png";
 import { HeaderPublic } from "@/app/shared/header/headerPublic";
 import { PUBLIC_ROUTES } from "@/app/constants/routes";
 
@@ -37,20 +37,20 @@ export const Welcome = () => {
             {/* Imagen 1 */}
             <div className="flex flex-col items-center bg-color-gray-light rounded p-4">
               <Image
-                src={acriesgosImage}
+                src={logo}
                 alt="Slide 1"
                 width={500}
                 height={300}
                 className="rounded-lg"
               />
               <p className="text-color-gray-dark mt-4 text-center">
-                Sistema de Gestión de Seguridad y Salud en el Trabajo de A&C RIESGOS.
+                Roll Out MB
               </p>
             </div>
             {/* Imagen 2 */}
             <div className="flex flex-col items-center bg-color-gray-light rounded p-4">
               <Image
-                src={acriesgosImage}
+                src={logo}
                 alt="Slide 2"
                 width={500}
                 height={300}
@@ -66,7 +66,7 @@ export const Welcome = () => {
         {/* Botones */}
         <div style={{display:"flex", marginRight:'10%', flexDirection:"column"}}>
           <button
-            className="bg-color-orange text-color-white mb-4 py-2 px-6 rounded font-bold hover:bg-color-yellow"
+            className="bg-color-blue text-color-white mb-4 py-2 px-6 rounded font-bold"
             
             onClick={() => router.push(PUBLIC_ROUTES.LOGIN)}
           >
@@ -74,7 +74,7 @@ export const Welcome = () => {
           </button>
           
           <button
-            className="bg-color-gray-dark text-color-white py-2 px-6 rounded font-bold hover:bg-color-yellow"
+            className="bg-color-gray-dark text-color-white py-2 px-6 rounded font-bold"
             onClick={() => router.push(PUBLIC_ROUTES.REGISTER)}
           >
             Registrarse
