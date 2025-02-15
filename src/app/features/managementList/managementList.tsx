@@ -72,7 +72,7 @@ export const ManagementList = () => {
 const Componentes = () => {
   
   const [idDeleteComp, setidDeleteComp] = useState<number|null>(null)
-  const [nameComponente, setnameComponente] = useState("")
+  const [nameComponente, setNameComponente] = useState("")
 
   const [openModalDelete, setOpenModalDelete] = useState(false)
   const [openModalAdd, setOpenModalAdd] = useState(false)
@@ -86,7 +86,7 @@ const Componentes = () => {
     const nuevoId = componentes.length + 1;
     setComponentes([...componentes, { id: nuevoId, componente: nameComponente }]);
     setOpenModalAdd(false)
-    setnameComponente('')
+    setNameComponente('')
   };
 
   const eliminarComponente = (id: any) => {
@@ -145,7 +145,7 @@ const Componentes = () => {
       <ModalConf open={openModalDelete} title="Confirmación" title2="¿Está seguro de que desea eliminar este componente?" 
                  close={()=>setOpenModalDelete(false)} delete={()=>eliminarComponente(idDeleteComp)}/>
 
-      <ModalChildren open={openModalAdd} title="Agregar componente" title2="" 
+      <ModalChildren open={openModalAdd} title="AGREGAR COMPONENTE" title2="" 
                  close={()=>setOpenModalAdd(false)} save={agregarComponente} >
           <div className="flex items-center gap-4">
             <label className="text-color-black font-bold w-40" htmlFor="nombre">
@@ -156,7 +156,7 @@ const Componentes = () => {
               id="nombre"
               name="nombre"
               value={nameComponente}
-              onChange={(e)=>setnameComponente(e.target.value)}
+              onChange={(e)=>setNameComponente(e.target.value)}
               placeholder="Nombre completo"
               className="w-full p-2 border border-gray-300 rounded "
               style={{color:"black"}}                    
@@ -168,6 +168,14 @@ const Componentes = () => {
 };
 
 const Estrategias = () => {
+
+  const [idDeleteEstr, setidDeleteEstr] = useState<number|null>(null)
+  const [nameEstrategia, setNameEstrategia] = useState("")
+
+  const [openModalAdd, setOpenModalAdd] = useState(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
+  
+
   const [estrategias, setEstrategias] = useState([
     { id: 1, estrategia: "Actividades de Medicina Preventiva y del Trabajo de acuerdo a las recomendaciones y resultados del DX de Condiciones de Salud" },
     { id: 2, estrategia: "Actualización sociodemográfico de la población trabajadora" },
@@ -175,13 +183,14 @@ const Estrategias = () => {
 
   const agregarEstrategias = () => {
     const nuevoId = estrategias.length + 1;
-    setEstrategias([...estrategias, { id: nuevoId, estrategia: `Estrategia ${nuevoId}` }]);
+    setEstrategias([...estrategias, { id: nuevoId, estrategia: nameEstrategia }]);
+    setOpenModalAdd(false)
+    setNameEstrategia('')
   };
 
   const eliminarEstrategias = (id: any) => {
-    if (confirm("¿Está seguro de que desea eliminar esta estrategia?")) {
-      setEstrategias(estrategias.filter((comp) => comp.id !== id));
-    }
+    setEstrategias(estrategias.filter((estr) => estr.id !== id));
+    setOpenModalDelete(false)
   };
 
   return (
@@ -205,7 +214,10 @@ const Estrategias = () => {
               <td className="py-2 text-color-black">{comp.estrategia}</td>
               <td className="py-2 text-center">
                 <button
-                  onClick={() => eliminarEstrategias(comp.id)}
+                  onClick={() => {
+                    setOpenModalDelete(true)
+                    setidDeleteEstr(comp.id)
+                  }}
                   className="py-1 px-2 bg-color-red text-color-white rounded flex items-center justify-center"
                 >
                   <FaTrash />
@@ -217,7 +229,9 @@ const Estrategias = () => {
           <tr>
             <td colSpan="3" className="py-4 text-center">
               <button
-                onClick={agregarEstrategias}
+                onClick={() => 
+                  setOpenModalAdd(true)
+                }
                 className="py-2 px-4 bg-color-gray-dark text-color-white rounded font-bold hover:bg-color-yellow transition"
               >
                 Agregar estrategia
@@ -226,25 +240,55 @@ const Estrategias = () => {
           </tr>
         </tbody>
       </table>
+      
+      <ModalConf open={openModalDelete} title="Confirmación" title2="¿Está seguro de que desea eliminar esta estrategia?" 
+                 close={()=>setOpenModalDelete(false)} delete={()=>eliminarEstrategias(idDeleteEstr)}/>
+
+      <ModalChildren open={openModalAdd} title="AGREGAR ESTRATEGIA" title2="" 
+                 close={()=>setOpenModalAdd(false)} save={agregarEstrategias} >
+          <div className="flex items-center gap-4">
+            <label className="text-color-black font-bold w-40" htmlFor="nombre">
+              Descripción:
+            </label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              value={nameEstrategia}
+              onChange={(e)=>setNameEstrategia(e.target.value)}
+              placeholder="Descripción estrategia"
+              className="w-full p-2 border border-gray-300 rounded "
+              style={{color:"black"}}                    
+            />
+          </div>
+      </ModalChildren>
+
     </div>
   );
 };
 
 const Entregables = () => {
+  const [idDeleteEntr, setidDeleteEntr] = useState<number|null>(null)
+  const [nameEntregable, setNameEntregable] = useState("")
+  
+  const [openModalAdd, setOpenModalAdd] = useState(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
+
   const [entregables, setEntregables] = useState([
     { id: 1, entregable: "Acta de Conformación de Brigada de Emergencias Hojas de Vida de Brigadistas, asignación distintivo" },
     { id: 2, entregable: "Acta de reunión, presentación, correo" },
   ]);
-
+ 
   const agregarEntregable = () => {
     const nuevoId = entregables.length + 1;
-    setEntregables([...entregables, { id: nuevoId, entregable: `Entregable ${nuevoId}` }]);
+    setEntregables([...entregables, { id: nuevoId, entregable: nameEntregable }]);
+    setOpenModalAdd(false)
+    setNameEntregable('')
   };
 
-  const eliminarEntregable = (id: any) => {
-    if (confirm("¿Está seguro de que desea eliminar este entregable?")) {
-      setEntregables(entregables.filter((comp) => comp.id !== id));
-    }
+  const eliminarEntregable = (id) => {
+    setEntregables(entregables.filter((entr) => entr.id !== id));
+    setOpenModalDelete(false);
   };
 
   return (
@@ -268,7 +312,10 @@ const Entregables = () => {
               <td className="py-2 text-color-black">{comp.entregable}</td>
               <td className="py-2 text-center">
                 <button
-                  onClick={() => eliminarEntregable(comp.id)}
+                  onClick={() => {
+                    setOpenModalDelete(true)
+                    setidDeleteEntr(comp.id)
+                  }}
                   className="py-1 px-2 bg-color-red text-color-white rounded flex items-center justify-center"
                 >
                   <FaTrash />
@@ -276,11 +323,10 @@ const Entregables = () => {
               </td>
             </tr>
           ))}
-          {/* Botón Agregar Entregables al final de la tabla */}
           <tr>
             <td colSpan="3" className="py-4 text-center">
               <button
-                onClick={agregarEntregable}
+                onClick={() => setOpenModalAdd(true)}
                 className="py-2 px-4 bg-color-gray-dark text-color-white rounded font-bold hover:bg-color-yellow transition"
               >
                 Agregar entregable
@@ -289,6 +335,30 @@ const Entregables = () => {
           </tr>
         </tbody>
       </table>
+    
+      <ModalConf open={openModalDelete} title="Confirmación" title2="¿Está seguro de que desea eliminar este entregable?" 
+                 close={()=>setOpenModalDelete(false)} delete={()=>eliminarEntregable(idDeleteEntr)}/>
+      
+      <ModalChildren open={openModalAdd} title="AGREGAR ENTREGABLE" title2="" 
+                 close={()=>setOpenModalAdd(false)} save={agregarEntregable} >
+          
+          <div className="flex items-center gap-4">
+            <label className="text-color-black font-bold w-40" htmlFor="entregable">
+              Descripción:
+            </label>
+            <input
+              type="text"
+              id="entregable"
+              name="entregable"
+              value={nameEntregable}
+              onChange={(e)=>setNameEntregable(e.target.value)}
+              placeholder="Descripción entregable"
+              className="w-full p-2 border border-gray-300 rounded "
+              style={{color:"black"}}                    
+            />
+          </div>
+      </ModalChildren>
+
     </div>
   );
 };
@@ -297,7 +367,7 @@ const Clientes = () => {
   
   const [idDeleteCli, setidDeleteCli] = useState<number|null>(null)
   const [nitClient, setNitClient] = useState("")
-  const [nameClient, setnameClient] = useState("")
+  const [nameClient, setNameClient] = useState("")
   const [statusClient, setStatusClient] = useState("Nuevo")
   const [personContact, setPersonContact] = useState("")
   const [cellClient, setCellClient] = useState("")
@@ -323,7 +393,7 @@ const Clientes = () => {
     ]);
     setOpenModalAdd(false)
     setNitClient('')
-    setnameClient('')
+    setNameClient('')
     setStatusClient('Nuevo')
     setPersonContact('')
     setCellClient('')
@@ -428,7 +498,7 @@ const Clientes = () => {
               value={nameClient}
               onChange={(e) => {
                 const value = e.target.value;
-                if (/^[a-zA-Z\s]*$/.test(value)) setnameClient(value); // Solo letras y espacios.
+                if (/^[a-zA-Z\s]*$/.test(value)) setNameClient(value); // Solo letras y espacios.
               }}
               placeholder="Nombre cliente"
               className="w-full p-2 border border-gray-300 rounded "

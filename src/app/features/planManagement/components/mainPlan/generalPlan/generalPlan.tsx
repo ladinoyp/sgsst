@@ -14,6 +14,7 @@ export const GeneralPlan = () => {
     componente: "Todos",
     estrategia: "Todos",
   });
+  const [ordenAscendente, setOrdenAscendente] = useState(true);
 
   // Datos de ejemplo para las actividades
   const actividades = [
@@ -64,11 +65,24 @@ export const GeneralPlan = () => {
     setFiltros((prev) => ({ ...prev, [name]: value }));
   };
 
-  const actividadesFiltradas = actividades.filter(
+  // Ordenar actividades por estado
+  const actividadesOrdenadas = [...actividades].sort((a, b) => {
+    if (ordenAscendente) {
+      return a.estado.localeCompare(b.estado);
+    } else {
+      return b.estado.localeCompare(a.estado);
+    }
+  });
+
+  const actividadesFiltradas = actividadesOrdenadas.filter(
     (actividad) =>
       (filtros.componente === "Todos" || actividad.componente === filtros.componente) &&
       (filtros.estrategia === "Todos" || actividad.estrategia === filtros.estrategia)
   );
+
+  const cambiarOrden = () => {
+    setOrdenAscendente(!ordenAscendente);
+  };
 
   return (
     <div className="min-h-screen bg-color-white">
@@ -77,8 +91,38 @@ export const GeneralPlan = () => {
 
       {/* Contenido principal */}
       <main className="p-6 flex flex-col items-center">
+        {/* Información básica de la empresa */}
+        <div className="w-full max-w-[70%] bg-color-gray-light rounded-lg shadow-md p-2 mb-2">
+          <table className="min-w-full">
+            <tbody>
+              <tr>
+                <td className="py-2 px-4 text-color-gray-dark font-medium">
+                  Empresa:
+                </td>
+                <td className="py-2 px-4 text-color-black">
+                  Empresa XYZ S.A.
+                </td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 text-color-gray-dark font-medium">
+                  NIT:
+                </td>
+                <td className="py-2 px-4 text-color-black">900123456-7</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 text-color-gray-dark font-medium">
+                  Ubicación:
+                </td>
+                <td className="py-2 px-4 text-color-black">
+                  Carrera 10 #23-45, Bogotá, Colombia
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         {/* Encabezado de la página */}
-        <h1 className="text-color-black text-2xl font-bold mb-6 text-center">
+        <h1 className="text-color-black text-2xl font-bold mb-4 mt-6 text-center">
           ACTIVIDADES DEL PLAN ANUAL DE TRABAJO
         </h1>
 
@@ -98,7 +142,7 @@ export const GeneralPlan = () => {
                 name="componente"
                 value={filtros.componente}
                 onChange={handleFiltroChange}
-                className="w-full md:w-auto p-2 rounded border border-gray-300 bg-white"
+                className="w-full md:w-auto p-2 rounded border border-gray-300 bg-white text-color-black"
               >
                 {componentesUnicos.map((componente, idx) => (
                   <option key={idx} value={componente}>
@@ -119,7 +163,7 @@ export const GeneralPlan = () => {
                 name="estrategia"
                 value={filtros.estrategia}
                 onChange={handleFiltroChange}
-                className="w-full md:w-auto p-2 rounded border border-gray-300 bg-white"
+                className="w-full md:w-auto p-2 rounded border border-gray-300 bg-white text-color-black"
               >
                 {estrategiasUnicas.map((estrategia, idx) => (
                   <option key={idx} value={estrategia}>
@@ -137,13 +181,23 @@ export const GeneralPlan = () => {
             {/* Cabecera de la tabla */}
             <thead className="bg-color-yellow text-color-black">
               <tr>
-                <th className="py-3 px-6 text-left rounded-tl-lg">Componente</th>
-                <th className="py-3 px-6 text-left">Estrategia</th>
-                <th className="py-3 px-6 text-left">Salida - Entregable</th>
-                <th className="py-3 px-6 text-left">Fecha</th>
-                <th className="py-3 px-6 text-center">Estado</th>
-                <th className="py-3 px-6 text-left">Observaciones</th>
-                <th className="py-3 px-6 text-center rounded-tr-lg">Acción</th>
+                <th className="py-3 px-6 text-left rounded-tl-lg">COMPONENTE</th>
+                <th className="py-3 px-6 text-left">ESTRATEGIA DE INTERVENCIÓN</th>
+                <th className="py-3 px-6 text-left">SALIDA - ENTREGABLE</th>
+                <th className="py-3 px-6 text-left">FECHA</th>
+                <th
+                  className="py-3 px-6 text-center cursor-pointer"
+                  onClick={cambiarOrden}
+                >
+                  ESTADO EJECUTADO{" "}
+                  {ordenAscendente ? (
+                    <span>&uarr;</span>
+                  ) : (
+                    <span>&darr;</span>
+                  )}
+                </th>
+                <th className="py-3 px-6 text-left">OBSERVACIONES</th>
+                <th className="py-3 px-6 text-center rounded-tr-lg">ACCIÓN</th>
               </tr>
             </thead>
 
@@ -194,45 +248,6 @@ export const GeneralPlan = () => {
           Volver
         </button>
       </main>
-
-      {/* Modal */}
-      {isModalOpen && actividadSeleccionada && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-color-white rounded-lg shadow-lg p-6 w-[90%] max-w-[500px]">
-            <h2 className="text-color-black text-xl font-bold mb-4 text-center">
-              Detalle de la Actividad
-            </h2>
-            <div className="space-y-4 text-color-black">
-              <p>
-                <strong>Componente:</strong> {actividadSeleccionada.componente}
-              </p>
-              <p>
-                <strong>Estrategia:</strong> {actividadSeleccionada.estrategia}
-              </p>
-              <p>
-                <strong>Salida:</strong> {actividadSeleccionada.entregable}
-              </p>
-              <p>
-                <strong>Fecha:</strong> {actividadSeleccionada.fecha}
-              </p>
-              <p>
-                <strong>Estado:</strong> {actividadSeleccionada.estado}
-              </p>
-              <p>
-                <strong>Observaciones:</strong> {actividadSeleccionada.observaciones}
-              </p>
-            </div>
-            <div className="mt-6 flex justify-center">
-              <button
-                onClick={cerrarModal}
-                className="bg-color-orange text-color-white py-2 px-6 rounded font-bold hover:bg-color-yellow transition"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -6,10 +6,11 @@ import Slider from "react-slick";
 import { Header } from "@/app/shared/header/header";
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/app/constants/routes";
 import acriesgosImage from "@/app/assets/images/aycok.png";
-import documentIcon from "@/app/assets/images/document.png";
+import plainIcon from "@/app/assets/images/plain.png";
 import calendarIcon from "@/app/assets/images/calendar.png";
 import activityIcon from "@/app/assets/images/notes.png";
 import userIcon from "@/app/assets/images/user.png";
+import carpetIcon from "@/app/assets/images/carpet.png";
 import edit from "@/app/assets/images/pencil.png";
 import exit from "@/app/assets/images/exit.png";
 
@@ -94,7 +95,7 @@ export const HomeComponent = () => {
             </h2>
             <div className="flex justify-center mb-4">
               <Image
-                src={documentIcon}
+                src={plainIcon}
                 alt="Documento"
                 width={30}
                 height={30}
@@ -169,6 +170,48 @@ export const HomeComponent = () => {
             </p>
           </section>
 
+          {/* Editar perfil */} 
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PRIVATE_ROUTES.EDIT_PROFILE)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              EDITAR PERFIL
+            </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={edit}
+                alt="edit"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+            <p className="text-color-gray-dark">
+              Administrar información de mi perfil.
+            </p>
+          </section> 
+
+          {/* Salir */} 
+          <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
+            onClick={() => router.push(PUBLIC_ROUTES.WELCOME)}
+          >            
+            <h2 className="text-lg font-bold text-color-gray-dark mb-4">
+              CERRAR SESIÓN
+            </h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={exit}
+                alt="exit"
+                width={30}
+                height={30}
+                className="rounded"
+              />
+            </div>
+          </section> 
+
+           
+
+
           {/* To do list */}
           <section className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow text-center"
             onClick={() => router.push(PRIVATE_ROUTES.AGENDA_PROFESIONAL)}
@@ -199,7 +242,7 @@ export const HomeComponent = () => {
             </h2>
             <div className="flex justify-center mb-4">
               <Image
-                src={calendarIcon}
+                src={carpetIcon}
                 alt="Calendario"
                 width={30}
                 height={30}

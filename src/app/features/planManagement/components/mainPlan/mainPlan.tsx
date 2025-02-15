@@ -63,7 +63,6 @@ export const MainPlan = () => {
             {/* ACTIVIDADES  */}
             <section
               className="bg-color-gray-light p-6 rounded shadow hover:shadow-lg transition-shadow cursor-pointer text-center"
-              //onClick={() => router.push(PRIVATE_ROUTES.PLAN_MANAGEMENT)}
               onClick={() =>
                         router.push(`${PRIVATE_ROUTES.PM_ACTIVITY}/${1}`)
                       }

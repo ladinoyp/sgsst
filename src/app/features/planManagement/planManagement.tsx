@@ -11,7 +11,7 @@ export const PlanManagement = () => {
 
   // Datos de ejemplo para las empresas
   const empresas = [
-    { id: 1, nombre: "Empresa 1   hjedshfgyasgfydwegfqfwefugufgwefugefwufgeuefwefgwfegu" },
+    { id: 1, nombre: "FUNDACION UNIVERSITARIA JUAN DE CASTELLANOS SUAREZ - SEDE PRINCIPAL" },
     { id: 2, nombre: "Empresa 2" },
     { id: 3, nombre: "Empresa 3" },
     { id: 4, nombre: "Empresa 4" },

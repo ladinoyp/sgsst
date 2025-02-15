@@ -212,6 +212,23 @@ export const AgendaProfesional = () => {
           />
         </div>
 
+        {/* modalidad */}
+        <div className="flex flex-col md:flex-row items-start md:items-center mb-4">
+          <label className="w-full md:w-1/4 text-color-black font-bold mb-2 md:mb-0">
+            Modalidad:
+          </label>
+          <select
+            className="w-full md:w-3/4 border border-gray-300 rounded px-2 py-1 text-color-black"
+            value={selectedEvent.status}
+            onChange={(e) =>
+              setSelectedEvent({ ...selectedEvent, status: e.target.value })
+            }
+          >
+            <option value="programado">Presencial</option>
+            <option value="en proceso">Virtual</option>
+          </select>
+        </div>
+
         {/* Observación */}
         <div className="flex flex-col md:flex-row items-start mb-4">
           <label className="w-full md:w-1/4 text-color-black font-bold mb-2 md:mb-0">
@@ -223,21 +240,6 @@ export const AgendaProfesional = () => {
             value={selectedEvent.observacion || ""}
             onChange={(e) =>
               setSelectedEvent({ ...selectedEvent, observacion: e.target.value })
-            }
-          />
-        </div>
-
-        {/* Hallazgos */}
-        <div className="flex flex-col md:flex-row items-start mb-4">
-          <label className="w-full md:w-1/4 text-color-black font-bold mb-2 md:mb-0">
-            Hallazgos:
-          </label>
-          <textarea
-            className="w-full md:w-3/4 border border-gray-300 rounded px-2 py-1 text-color-black"
-            rows={3}
-            value={selectedEvent.hallazgo || ""}
-            onChange={(e) =>
-              setSelectedEvent({ ...selectedEvent, hallazgo: e.target.value })
             }
           />
         </div>
@@ -257,23 +259,33 @@ export const AgendaProfesional = () => {
             }}
           />
         </div>
+{/* Botones */}
+        <div className="flex justify-center gap-x-4 mt-6">
+          <button
+            type="button"
+            onClick={() => setSelectedEvent(null)}
+            className="bg-color-gray-dark text-color-white py-2 px-4 rounded font-bold hover:bg-color-yellow transition"
+          >
+            Agregar actividad
+          </button>
+        </div>
 
         {/* Botones */}
-<div className="flex justify-center gap-x-4 mt-6">
-  <button
-    type="button"
-    onClick={() => setSelectedEvent(null)}
-    className="bg-color-orange text-color-white py-2 px-4 rounded font-bold hover:bg-color-yellow transition"
-  >
-    Cancelar
-  </button>
-  <button
-    type="submit"
-    className="bg-color-blue-light text-color-black py-2 px-4 rounded font-bold hover:bg-color-yellow transition"
-  >
-    Guardar
-  </button>
-</div>
+        <div className="flex justify-center gap-x-4 mt-6">
+          <button
+            type="button"
+            onClick={() => setSelectedEvent(null)}
+            className="bg-color-orange text-color-white py-2 px-4 rounded font-bold hover:bg-color-yellow transition"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            className="bg-color-blue-light text-color-black py-2 px-4 rounded font-bold hover:bg-color-yellow transition"
+          >
+            Guardar
+          </button>
+        </div>
 
       </form>
     </div>

@@ -14,20 +14,19 @@ const config: Config = {
 
         "color-black": "#000000", // Negro
 
+        "color-orange": "#FB923C", // Naranja intenso
+        "color-yellow": "#FBBF24", // Amarillo cálido
+        "color-red": "#FF0000", // rojo
+        "color-white": "#FFFFFF", // Blanco
+
         "color-blue": "#1E90FF", //Azul oscuro
         "color-blue-light": "#BFDBFE", //Azul claro
         
-        "color-yellow": "#FBBF24", // Amarillo cálido
-        "color-red": "#FF0000", // rojo
-        "color-orange": "#FB923C", // Naranja intenso
-        "color-white": "#FFFFFF", // Blanco
-
         "cl-status-blue": "#1E90FF", // Programado
         "cl-status-yellow": "#FFFF00", // En proceso
         "cl-status-green": "#32CD32", // Ejecutada a tiempo
         "cl-status-orange": "#FFA500", // Ejecutada fuera de tiempo
         "cl-status-red": "#FF0000", // Retrasada
-
       },
     },
   },
